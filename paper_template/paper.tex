@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% basic NuGrid paper template
+%       based on MESA paper template by Ed Brown
+%       version 0; 19/04/2013
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,preprint]{aastex}
+%\documentclass{emulateapj}
+\usepackage{txfonts}
+\usepackage{xspace}
+\usepackage[usenames,dvipsnames]{color}
+
+% macros. please check here before defining something new.
+\input{../paper_resources/macros/code}
+\input{../paper_resources/macros/derivatives}
+\input{../paper_resources/macros/nuclides}
+\input{../paper_resources/macros/concepts}
+\input{../paper_resources/macros/units}
+\input{../paper_resources/macros/vectors}
+\input{../paper_resources/macros/formatting}
+\input{../paper_resources/macros/symbols}
+
+% misc. abbreviations
+\newcommand{\paperone}{Paper~I} % the first paper
+
+% for comments
+\newcommand{\shortcomment}[3]{\textcolor{#1}{[#2: #3]}}
+% for the Ready-To-Read sign off
+\newcommand{\rtr}[1]{\shortcomment{red}{RTR}{#1}}
+% for freezing a section
+\newcommand{\sectionisfrozen}[1]{\textcolor{BlueViolet}{\textsf{\bfseries[section is frozen: send comments to #1]}}}
+\newcommand{\sectionisdone}{\textcolor{Green}{\textsf{\bfseries[section is done]}}}
+
+% if you want to embed comments in the text, clone the following with
+% a color and your initials...
+%\newcommand{\mycom}[1]{\shortcomment{NavyBlue}{ABC}{#1}}   % for author's comments; choose your own color and 
+                                                            % replace 'my' and 'ABC' with your name and initials
+
+% lengths for figure widths
+\newlength{\apjcolwidth}
+\setlength{\apjcolwidth}{3.38in}
+\newlength{\figwidth}
+\setlength{\figwidth}{0.7\textwidth}
+% to see how figures look, set \figwidth to \apjcolsize
+\setlength{\figwidth}{\apjcolwidth}
+
+% for wide figures
+\newlength{\doublewide}
+\setlength{\doublewide}{0.8\textwidth}
+
+
+\begin{document}
+\title{NuGrid X. }
+\author{% for example
+First M. Last\altaffilmark{1}
+}
+\altaffiltext{1}{NuGrid Collaboration}
+\email{nugrid@lists.uvic.ca}
+	
+\begin{abstract}
+\end{abstract}
+
+\keywords{}
+
+%\tableofcontents
+
+\include{introduction}
+\include{science1}
+\include{science2}
+\include{conclusions}
+\input{acknowledge}
+
+\bibliographystyle{apj}
+\bibliography{../paper_resources/bib/nugrid}
+
+% for appendices, if you have them
+\appendix
+\include{appendixA}
+\include{appendixB}
+
+\end{document}

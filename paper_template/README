@@ -1,0 +1,48 @@
+NuGrid Paper Template 19/04/2013
+Aaron Dotter
+
+This directory contains the new NuGrid paper Latex template.  It is
+based on the layout created by Ed Brown for the MESA paper.  It is
+provided so that NuGrid papers can be written by an author team, using
+the same Latex style and thereby leading to an internally consistent
+manuscript. New papers can re-use the .bib files and macros from
+existing papers so that there is further consistency.
+
+In the paper directory there is a paper_resources directory which
+contains a macros and a bib diredctory. These contain latex macro
+files and nugrid.bib files and should be used for each
+paper. Additions should be made to these shared macro and bib files.
+
+How to proceed: 
+
+1. In the nugrid svn paper directory, svn copy the template to a new
+   name, e.g., paperX svn cp paper_template paperX
+
+2. go into paperX and start working on the new paper. There is a LaTeX
+   file called paper.tex that serves as the template. All sections are
+   specified therein.  There is a section for authors. There are
+   separate LaTeX files for introduction, example sections,
+   conclusions, acknowledgments, and appendices.
+   
+3. Figures: PDF and PNG are preferred. These should be stored in the 
+   figures sub-directory. See figs/figure_template for an example.
+
+4. Bibliography: There is a bibs sub-directory to be processed with
+   bibtex.  All references should go into one of the .bib files.
+   ADS gives access to the bibtex record for every article.
+
+5. Symbols, units, etc.: are standardized in the macros directory.
+   Rather than adding new commands to individual LaTeX files, please
+   put all definitions in macros/. Note that for many things there are
+   already macros. In particular note the way we write isotopes (see
+   nuclides.tex). The point of the NuGrid Latex framework is to
+   homogenize the Latex document appearance, and using only one macro
+   for each task is the most important way in which to accomplish
+   this.
+
+6. Notes: for material not destined for the text of the paper, put it
+   in the notes sub-dir.
+
+7. There is a Makefile and/or basic compile scripts (mk and clean) 
+   to construct the paper from sources and to clean up the auxiliary 
+   files.
