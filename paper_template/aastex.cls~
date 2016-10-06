@@ -264,7 +264,7 @@ revtex4-1.cls^^J^^J}\stop
 %% needed?
 \def\raggedcolumn@sw#1#2{#2}  % implement flushbottom as it was in revtex4
 
-\RequirePackage{graphicx}
+\RequirePackage{epsf,graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Font families
