@@ -1,3 +1,3 @@
-This directory is now available from  Bitbucket NuGrid team:
+This directory is now available from  GitHub NuGrid organization:
 
-https://bitbucket.org/nugrid/paper_template
+https://github.com/NuGrid/Paper
