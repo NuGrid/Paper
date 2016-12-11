@@ -1,3 +1,1 @@
-# Paper
-Template and rescources for writing a NuGrid paper.
-Thank you to Ed Brown for permission to use the template, and to Aaron Dotter for adopting it for to the NuGrid collaboration.
+[AASTeX v6.1 Authors Guide](http://journals.aas.org/authors/aastex/aasguide61.html) 

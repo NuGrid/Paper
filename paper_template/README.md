@@ -1,1 +1,0 @@
-[AASTeX v6.1 Authors Guide](http://journals.aas.org/authors/aastex/aasguide61.html) 
