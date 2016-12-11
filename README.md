@@ -30,7 +30,7 @@ jupyter notebook example_figures.ipynb
 ```
 In the notebook use the _Cell_ $\rightarrow$ _Run All_ menu option to execute the notebook and make the image files. Then 
 ```
-cd ..
+cd ../..
 ./mk
 ```
 This should produce the pdf file `paper.pdf`.
