@@ -1,5 +1,10 @@
 Please use PDF and/or PNG only.
 
+run example notebook in a jupyter session:
+```
+$ jupyter notebook
+```
+
 We place in this location not only the figure itself but also the
 ipython notebook of plotting script and other information were used to
 make the figure. If the data is relevant enough to be shown in a paper
