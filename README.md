@@ -15,9 +15,10 @@ existing papers so that there is further consistency.
 This repo contains `paper_resources` directory which contains a macros
 and a bib diredctory. These contain latex macro files and `*.bib`
 files and should be used for each paper. Additions should be made to
-these shared macro and bib files.  The `paper_template` directory
+these shared macro and bib files.  For MNRAS and AAS journals there
+are separate *template* directories, `paper_mnras` and `paper_aas`. Each 
 contains a ready-to-use `paper.tex` template that imports the
-resources from `paper_resources`.
+resources from `paper_resources`. 
 
 ## Quickstart
 
@@ -57,7 +58,10 @@ with a new copy of Paper repo.
    to construct the paper from sources and to clean up the auxiliary 
    files.
 
-Check the [AASTeX v6.1 Authors Guide](http://journals.aas.org/authors/aastex/aasguide61.html)  for details and the more complete example in `paper_template/aastex_v611/sample61.tex` as well as the comments and .
+## Resources
+
+* Check the [AASTeX v6.1 Authors Guide](http://journals.aas.org/authors/aastex/aasguide61.html)  for details and the more complete example in `paper_template/aastex_v611/sample61.tex` as well as the comments and .
+* [MNRAS for authors](http://www.oxfordjournals.org/our_journals/mnrasl/for_authors/)
 
 ## Acknowledgements
 Thank you to Ed Brown for permission to use the initial version of
