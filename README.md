@@ -1,8 +1,10 @@
 # NuGrid Paper Repo
 
-The [NuGrid Paper Repo](https://github.com/NuGrid/Paper) is available from  [GitHub NuGrid organization](https://github.com/NuGrid) 
+The [NuGrid Paper Repo](https://github.com/NuGrid/Paper) is available
+from [GitHub NuGrid organization](https://github.com/NuGrid)
 
 ## Intro
+
 This directory contains the new NuGrid paper Latex template.  It is
 based on the layout created by Ed Brown for the MESA paper.  It is
 provided so that NuGrid papers can be written by an author team, using
@@ -10,14 +12,31 @@ the same Latex style and thereby leading to an internally consistent
 manuscript. New papers can re-use the .bib files and macros from
 existing papers so that there is further consistency.
 
-This repo contains `paper_resources` directory which
-contains a macros and a bib diredctory. These contain latex macro
-files and `*.bib` files and should be used for each
-paper. Additions should be made to these shared macro and bib files.
-The `paper_template` directory contains a ready-to-use `paper.tex` template that 
-imports the resources from `paper_resources`.
+This repo contains `paper_resources` directory which contains a macros
+and a bib diredctory. These contain latex macro files and `*.bib`
+files and should be used for each paper. Additions should be made to
+these shared macro and bib files.  The `paper_template` directory
+contains a ready-to-use `paper.tex` template that imports the
+resources from `paper_resources`.
 
-## How to proceed
+## Quickstart
+
+Make sure you are insude the `Paper` repo, and that you have mounted the CANFAR VOspace if you want to use the figure example:
+```
+getCert
+mountvofs --readonly --cache_dir=/tmp/vosCache --cache_limit=2000 --mountpoint=/tmp/nugrid --vospace=vos:nugrid
+cd paper_template/figs/figure_template/
+jupyter notebook example_figures.ipynb
+```
+In the notebook use the _Cell_ $\rightarrow$ _Run All_ menu option to execute the notebook and make the image files. Then 
+```
+cd ..
+./mk
+```
+This should produce the pdf file `paper.pdf`.
+
+
+## Additional information
 
 1. Clone the Paper repo and start writing in the `paper_template` dir using the `paper.tex` template. 
 2. Rename Paper repo to some project name and associate with appropriate remote repository to share with collaborators. 
