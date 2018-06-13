@@ -87,7 +87,10 @@
 
 % for author's comments; choose your own color and replace 'fh' and
 % 'FH' with your name and initials
-\newcommand{\fhcom}[1]{\shortcomment{PineGreen}{FH}{#1}}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[]{color}
+\newcommand{\fhcom}[1]{{\color{PineGreen}[\emph{FH: #1}]}}
+\newcommand{\fhtxt}[1]{{\color{PineGreen}[FH: #1]}}
 
 %%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
 
