@@ -66,5 +66,5 @@ with a new copy of Paper repo.
 ## Acknowledgements
 Thank you to Ed Brown for permission to use the initial version of
 this template, and to Aaron Dotter for adopting it for to the NuGrid
-collaboration.  Updates by Falk Herwig to aastex v6.11.
+collaboration.  Updates by Ondrea Clarkson. Updates by Falk Herwig to aastex v6.11.
 
