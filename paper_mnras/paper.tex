@@ -127,10 +127,9 @@ $^\dagger$NuGrid collaboration}
 
 % Abstract of the paper
 \begin{abstract}
-This is a simple template for authors to write new MNRAS papers.
-The abstract should briefly describe the aims, methods, and main results of the paper.
-It should be a single paragraph not more than 250 words (200 words for Letters).
-No references should appear in the abstract.
+We present a new method to calculate comprehensive nucleosyntheis in 1D based on mixing information extracted from 3d.
+
+
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -145,91 +144,124 @@ keyword1 -- keyword2 -- keyword3
 
 \section{Introduction}
 
-This is a simple template for authors to write new MNRAS papers.
-See \texttt{mnras\_sample.tex} for a more complex example, and \texttt{mnras\_guide.tex}
-for a full user guide.
+[David]
 
-All papers should start with an Introduction section, which sets the work
-in context, cites relevant earlier studies in the field by \citet{1996ApJ...456..902R},
-and describes the problem the authors aim to solve \citep[e.g.][]{cyburt:10}.
+[1.5 - 2 pages]
 
-\section{Methods, Observations, Simulations etc.}
+[2 days][2: Sep 4]
 
-Normally the next section describes the techniques the authors used.
-It is frequently split into subsections, such as Section~\ref{sec:maths} below.
+Purpose of introduction is:
+\begin{itemize}
+\item why is the topic important, why should you - the reader - care: absence of any detailed nucleosythesis from recently presented sims from other groups.
+\item why is your contribution (as presented in this paper) needed; you show that by summarizing the state of the art and pointing out why that is insufficient
+\item in Ritter+ and Denissenkov+ a diffusion approach was used, in the Ritter case we only used "typical" diffusion coeffiencts and in Pavel's paper we post-processed the MLT stellar evolution, so here we explore diffusion and advection post-processing; 
+\item the approach is based on .... include brief summary of conveyer belt method as published in recent Monash paper
+\item Define the scope of the paper: This paper will go a first toward addressing these issues. It will present and compare two ways to perform 1D burn+mix  post-processing of 3D hydro. The first adopts the diffusion coefficient method, and the second the conveyor-belt advection method. Both methods will be applied to 3D hydrodynamic simulations of RAWDs and the goal is to reproduce the spherically averaged radial profile evolution of the ingested H. In the future this method can then be applied to comprehensive post-processing using large networks.
+\end{itemize}
 
-\subsection{Maths}
-\label{sec:maths} % used for referring to this section from elsewhere
 
-Simple mathematics can be inserted into the flow of the text e.g. $2\times3=6$
-or $v=220$\,km\,s$^{-1}$, but more complicated expressions should be entered
-as a numbered equation:
 
-\begin{equation}
-    x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
-	\label{eq:quadratic}
-\end{equation}
+\section{Methods}
+\label{sec:allmethods}
 
-Refer back to them as e.g. equation~(\ref{eq:quadratic}).
+\subsection{PPMstar simulations}
+The advective post-processing method introduced here is applied to 3D hdyrodynamic simulations of He-shell flash convection in a rapidly accreting white dwarf \citep{Denissenkov:2017ba}. The initial stratification has been taken from stellar evolution model G with metallicity $\mathrm{[Fe/H]} = -2.6$ from \cite{2019MNRAS.488.4258D}. 
 
-\subsection{Figures and tables}
+As in previous work \citep{Herwig:2014cx,Jones:2017kc} we use the \ppmstar{} code of \citet{woodward15} with additional details provided by \citet{Andrassy:2018wy}. The explicit
+Cartesian-grid-based code is based on the
+Piecewise-Parabolic Method \citep[PPM;][]{woodward_colella81,
+woodward_colella84, colella_woodward84, woodward86, woodward07}, and  tracks the advection of concentrations in a two-fluid scheme using the Piecewise-Parabolic Boltzmann method \citep[PPB;][]{woodward86,woodward15}.
 
-Figures and tables should be placed at logical positions in the text. Don't
-worry about the exact layout, which will be handled by the publishers.
+\subsection{Diffusion post-processing}
+Robert, Pavel, Falk
 
-An example figure can be seen in \Fig{mass-N14}.
-, and tables as
-e.g. \Tab{example_table}.
+\begin{itemize}
+\item briefly describe work flow, based on D determination already dewscribed in Jones+ (maybe with some input on updated from Robert)
+\end{itemize}
 
-% Example figure
-\begin{figure}
-  % To include a figure from a file named example.*
-  % Allowable file formats are eps or ps if compiling using latex
-  % or pdf, png, jpg if compiling using pdflatex
 
-  %\includegraphics[width=\columnwidth]{figs/figure_template/mass-N14}
-  \caption{This is an example figure. Captions appear below each
-    figure.  Give enough detail for the reader to understand what
-    they're looking at, but leave detailed discussion to the main body
-    of the text.  This particular figure file will appear when you
-    exectute the example notebook in
-    \texttt{figs/figure\_template}. Then uncomment the
-    \texttt{includegraphics} command in the latex source file.} 
-    \lFig{mass-N14}
-\end{figure}
+\subsection{Advection post-processing}
 
-Another results is also good \Fig{mass-O16}.
-% Example table
-\begin{table}
-	\centering
-	\caption{This is an example table. Captions appear above each table.
-	Remember to define the quantities, symbols and units used.}
-	\lTab{example_table}
-	\begin{tabular}{lccr} % four columns, alignment for each
-		\hline
-		A & B & C & D\\
-		\hline
-		1 & 2 & 3 & 4\\
-		2 & 4 & 6 & 8\\
-		3 & 5 & 7 & 9\\
-		\hline
-	\end{tabular}
-\end{table}
+[David]
 
-% Example figure
-\begin{figure}
-	% To include a figure from a file named example.*
-	% Allowable file formats are eps or ps if compiling using latex
-	% or pdf, png, jpg if compiling using pdflatex
-	\includegraphics[width=\columnwidth]{figs/figure_template/mass-O16}
-    \caption{Another figure.}
-    \lFig{mass-O16}
-\end{figure}
+[2-3 pages]
 
-\section{Conclusions}
+[5 days][1: Sep 2]
 
-The last numbered section should briefly summarise what has been done, and describe
-the final conclusions which the authors draw from their work.
+\begin{itemize}
+\item provide a formal description of the method
+\item do not discuss, don't pros and cons
+\item no results yet
+\item do write down all equations and clear definitions of all quantities and concepts
+\end{itemize}
+
+
+
+\section{Results}
+\subsection{3D hydrodynamic simulations of RAWDs}
+
+[David]
+
+[2.5 pages]
+
+[3 days][3: Sep 9]
+
+\begin{itemize}
+\item describe the properties of the flow that matters for advection scheme
+\item asymmetry of flow, entrainment rate
+\item transition from convection to stable, 
+\end{itemize}
+
+
+Figures: (just add the version that you already have)
+\begin{itemize}
+\item mollweide plots of abundance and velocicities
+\item comparison 1536 vs 768
+\end{itemize}
+
+
+\subsection{Diffusion  post-processing}
+
+[Robert, Pavel, Falk]
+
+[1 pages]
+
+\subsection{Advection post-processing}
+
+[David]
+
+[3-4 pages]
+
+[5 days][4: Sep 13]
+
+\subsubsection{Verification}
+Very brief demonstration of advection with Gaussian. (May in the end have to move to appendix)
+
+\subsubsection{RAWD application}
+Present the application of the conveyer belt method.
+\begin{itemize}
+\item power spectra
+\item time scale plots
+\item stream plots
+\item compare burning rates and locations
+\item steady-state solution
+\end{itemize}
+
+
+\section{Discussion Conclusions}
+
+[David]
+
+[1-2 pages]
+
+[1 day][5: Sep 16]
+
+\begin{itemize}
+\item short summary of what has been done, highlighting the most important points
+\item self critique, challenges, what remains open and unsolved
+\item limitation: has to be explicit, hint at implications of that finding for application stellar evolution codes
+\item possible future applications beyond rawd
+\end{itemize}
 
 \section*{Acknowledgements}
 
