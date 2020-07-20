@@ -1,0 +1,308 @@
+% mnras_template.tex
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+% \documentclass[a4paper,fleqn,usenatbib]{mnras}
+\documentclass[fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+%\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage[normalem]{ulem}
+
+% macros. please check here before defining something new.
+% These include files live in https://github.com/NuGrid/Paper
+% clone, link to there and edit there, don't make a copy
+\input{../paper_resources/macros/code}
+\input{../paper_resources/macros/derivatives}
+\input{../paper_resources/macros/nuclides}
+\input{../paper_resources/macros/concepts}
+\input{../paper_resources/macros/units}
+\input{../paper_resources/macros/vectors}
+\input{../paper_resources/macros/formatting}
+\input{../paper_resources/macros/symbols}
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+% misc. abbreviations
+\newcommand{\paperone}{Paper~I} % the first paper
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% NuGrid/MESA way
+%%
+% see https://en.wikibooks.org/wiki/LaTeX/Colors for selection of
+% colors, such as Apricot Aquamarine BlueGreen BurntOrange
+% CornflowerBlue Emerald Gray Lavender Maroon NavyBlue Orchid Plum Red
+% RoyalBlue SeaGreen Tan Violet YellowOrange
+
+% for comments
+\newcommand{\shortcomment}[3]{\textcolor{#1}{[#2: #3]}}
+% for the Ready-To-Read sign off
+\newcommand{\rtr}[1]{\shortcomment{red}{RTR}{#1}}
+% for freezing a section
+\newcommand{\sectionisfrozen}[1]{\textcolor{BlueViolet}{\textsf{\bfseries[section is frozen: send comments to #1]}}}
+\newcommand{\sectionisdone}{\textcolor{Green}{\textsf{\bfseries[section is done]}}}
+
+% if you want to embed comments in the text, clone the following with
+% a color and your initials...
+
+% for author's comments; choose your own color and replace 'fh' and
+% 'FH' with your name and initials
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[]{color}
+\newcommand{\fhcom}[1]{{\color{PineGreen}[\emph{FH: #1}]}}
+\newcommand{\fhtxt}[1]{{\color{PineGreen}[FH: #1]}}
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Short title, max. 45 characters]{MNRAS \LaTeXe\ template -- title goes here}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[K. T. Smith et al.]{
+Keith T. Smith,$^{1}$\thanks{E-mail: mn@ras.org.uk (KTS)}
+A. N. Other,$^{2,\dagger}$
+Third Author$^{2,3}$
+and Fourth Author$^{3}$
+\\
+% List of institutions
+$^{1}$Royal Astronomical Society, Burlington House, Piccadilly, London W1J 0BQ, UK\\
+$^{2}$Department, Institution, Street Address, City Postal Code, Country\\
+$^{3}$Another Department, Different Institution, Street Address, City Postal Code, Country\\
+$^\dagger$NuGrid collaboration}
+
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2015}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% Abstract of the paper
+\begin{abstract}
+We present a new method to calculate comprehensive nucleosyntheis in 1D based on mixing information extracted from 3d.
+
+
+\end{abstract}
+
+% Select between one and six entries from the list of approved keywords.
+% Don't make up new ones.
+\begin{keywords}
+keyword1 -- keyword2 -- keyword3
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+[David]
+
+[1.5 - 2 pages]
+
+[2 days][2: Sep 4]
+
+Purpose of introduction is:
+\begin{itemize}
+\item why is the topic important, why should you - the reader - care: absence of any detailed nucleosythesis from recently presented sims from other groups.
+\item why is your contribution (as presented in this paper) needed; you show that by summarizing the state of the art and pointing out why that is insufficient
+\item in Ritter+ and Denissenkov+ a diffusion approach was used, in the Ritter case we only used "typical" diffusion coeffiencts and in Pavel's paper we post-processed the MLT stellar evolution, so here we explore diffusion and advection post-processing; 
+\item the approach is based on .... include brief summary of conveyer belt method as published in recent Monash paper
+\item Define the scope of the paper: This paper will go a first toward addressing these issues. It will present and compare two ways to perform 1D burn+mix  post-processing of 3D hydro. The first adopts the diffusion coefficient method, and the second the conveyor-belt advection method. Both methods will be applied to 3D hydrodynamic simulations of RAWDs and the goal is to reproduce the spherically averaged radial profile evolution of the ingested H. In the future this method can then be applied to comprehensive post-processing using large networks.
+\end{itemize}
+
+
+
+\section{Methods}
+\label{sec:allmethods}
+
+\subsection{PPMstar simulations}
+The advective post-processing method introduced here is applied to 3D hdyrodynamic simulations of He-shell flash convection in a rapidly accreting white dwarf \citep{Denissenkov:2017ba}. The initial stratification has been taken from stellar evolution model G with metallicity $\mathrm{[Fe/H]} = -2.6$ from \cite{2019MNRAS.488.4258D}. 
+
+As in previous work \citep{Herwig:2014cx,Jones:2017kc} we use the \ppmstar{} code of \citet{woodward15} with additional details provided by \citet{Andrassy:2018wy}. The explicit
+Cartesian-grid-based code is based on the
+Piecewise-Parabolic Method \citep[PPM;][]{woodward_colella81,
+woodward_colella84, colella_woodward84, woodward86, woodward07}, and  tracks the advection of concentrations in a two-fluid scheme using the Piecewise-Parabolic Boltzmann method \citep[PPB;][]{woodward86,woodward15}.
+
+\subsection{Diffusion post-processing}
+Robert, Pavel, Falk
+
+\begin{itemize}
+\item briefly describe work flow, based on D determination already dewscribed in Jones+ (maybe with some input on updated from Robert)
+\end{itemize}
+
+
+\subsection{Advection post-processing}
+
+[David]
+
+[2-3 pages]
+
+[5 days][1: Sep 2]
+
+\begin{itemize}
+\item provide a formal description of the method
+\item do not discuss, don't pros and cons
+\item no results yet
+\item do write down all equations and clear definitions of all quantities and concepts
+\end{itemize}
+
+
+
+\section{Results}
+\subsection{3D hydrodynamic simulations of RAWDs}
+
+[David]
+
+[2.5 pages]
+
+[3 days][3: Sep 9]
+
+\begin{itemize}
+\item describe the properties of the flow that matters for advection scheme
+\item asymmetry of flow, entrainment rate
+\item transition from convection to stable, 
+\end{itemize}
+
+
+Figures: (just add the version that you already have)
+\begin{itemize}
+\item mollweide plots of abundance and velocicities
+\item comparison 1536 vs 768
+\end{itemize}
+
+
+\subsection{Diffusion  post-processing}
+
+[Robert, Pavel, Falk]
+
+[1 pages]
+
+\subsection{Advection post-processing}
+
+[David]
+
+[3-4 pages]
+
+[5 days][4: Sep 13]
+
+\subsubsection{Verification}
+Very brief demonstration of advection with Gaussian. (May in the end have to move to appendix)
+
+\subsubsection{RAWD application}
+Present the application of the conveyer belt method.
+\begin{itemize}
+\item power spectra
+\item time scale plots
+\item stream plots
+\item compare burning rates and locations
+\item steady-state solution
+\end{itemize}
+
+
+\section{Discussion Conclusions}
+
+[David]
+
+[1-2 pages]
+
+[1 day][5: Sep 16]
+
+\begin{itemize}
+\item short summary of what has been done, highlighting the most important points
+\item self critique, challenges, what remains open and unsolved
+\item limitation: has to be explicit, hint at implications of that finding for application stellar evolution codes
+\item possible future applications beyond rawd
+\end{itemize}
+
+\section*{Acknowledgements}
+
+The Acknowledgements section is not numbered. Here you can thank helpful
+colleagues, acknowledge funding agencies, telescopes and facilities used etc.
+Try to keep it short.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
+
+% The best way to enter references is to use BibTeX:
+
+\bibliographystyle{mnras}
+\bibliography{../paper_resources/bib/nugrid} % if your bibtex file is
+                                             % called example.bib
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Some extra material}
+
+If you want to present additional material which would interrupt the
+flow of the main paper, it can be placed in an Appendix which appears
+after the list of references.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Don't change these lines
+\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
+% End of mnras_template.tex
